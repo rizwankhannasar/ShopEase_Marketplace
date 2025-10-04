@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - ShopEase</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .categories-container {
+            padding: 6rem 5% 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .categories-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .categories-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: var(--neon-glow);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neon-glow);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .category-content {
+            padding: 1.5rem;
+        }
+
+        .category-content h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-content p {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .category-stats {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stat-item i {
+            color: var(--primary-color);
+        }
+
+        .view-category {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .category-card:hover .view-category {
+            opacity: 1;
+            transform: translateY(0);
+            box-shadow: var(--neon-glow);
+        }
+
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            background: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: var(--neon-glow);
+        }
+
+        @media (max-width: 768px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>ShopEase</h1>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="categories.html" class="active">Categories</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="account.html"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Categories Section -->
+    <main class="categories-container">
+        <div class="categories-header">
+            <h1>Shop by Category</h1>
+            <p>Explore our wide range of products organized by categories</p>
+        </div>
+
+        <div class="category-filters">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Electronics</button>
+            <button class="filter-btn">Fashion</button>
+            <button class="filter-btn">Home & Living</button>
+            <button class="filter-btn">Sports</button>
+        </div>
+
+        <div class="categories-grid">
+            <!-- Electronics Category -->
+            <div class="category-card">
+                <img src="../images/electronics.jpg" alt="Electronics" class="category-image">
+                <div class="category-content">
+                    <h3>Electronics</h3>
+                    <p>Latest gadgets and electronic devices for your daily needs</p>
+                </div>
+                <div class="category-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-box"></i>
+                        <span>150+ Products</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.8 Rating</span>
+                    </div>
+                </div>
+                <a href="products.html?category=electronics" class="view-category">View All</a>
+            </div>
+
+            <!-- Fashion Category -->
+            <div class="category-card">
+                <img src="../images/fashion.jpg" alt="Fashion" class="category-image">
+                <div class="category-content">
+                    <h3>Fashion</h3>
+                    <p>Trendy clothing and accessories for all seasons</p>
+                </div>
+                <div class="category-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-box"></i>
+                        <span>300+ Products</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.7 Rating</span>
+                    </div>
+                </div>
+                <a href="products.html?category=fashion" class="view-category">View All</a>
+            </div>
+
+            <!-- Home & Living Category -->
+            <div class="category-card">
+                <img src="../images/home.jpg" alt="Home & Living" class="category-image">
+                <div class="category-content">
+                    <h3>Home & Living</h3>
+                    <p>Furniture and decor to make your home beautiful</p>
+                </div>
+                <div class="category-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-box"></i>
+                        <span>200+ Products</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.9 Rating</span>
+                    </div>
+                </div>
+                <a href="products.html?category=home" class="view-category">View All</a>
+            </div>
+
+            <!-- Sports Category -->
+            <div class="category-card">
+                <img src="../images/sports.jpg" alt="Sports" class="category-image">
+                <div class="category-content">
+                    <h3>Sports</h3>
+                    <p>Equipment and gear for all your sporting needs</p>
+                </div>
+                <div class="category-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-box"></i>
+                        <span>100+ Products</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.6 Rating</span>
+                    </div>
+                </div>
+                <a href="products.html?category=sports" class="view-category">View All</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>ShopEase is your one-stop destination for all your shopping needs. We offer quality products at competitive prices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@shopease.com</p>
+                <p>Phone: (555) 123-4567</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ShopEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Category filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const categoryCards = document.querySelectorAll('.category-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const category = btn.textContent.toLowerCase();
+
+                categoryCards.forEach(card => {
+                    if (category === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const cardCategory = card.querySelector('h3').textContent.toLowerCase();
+                        card.style.display = cardCategory.includes(category) ? 'block' : 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

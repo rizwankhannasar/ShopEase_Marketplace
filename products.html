@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ShopEase</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .products-container {
+            padding: 6rem 5% 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .products-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: var(--neon-glow);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neon-glow);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-content h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--primary-color);
+            box-shadow: var(--neon-glow);
+        }
+
+        .product-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            background: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: var(--neon-glow);
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>ShopEase</h1>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="categories.html">Categories</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="account.html"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Products Section -->
+    <main class="products-container">
+        <div class="products-header">
+            <h1>Our Products</h1>
+            <p>Discover our wide range of quality products</p>
+        </div>
+
+        <div class="product-filters">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Electronics</button>
+            <button class="filter-btn">Fashion</button>
+            <button class="filter-btn">Home & Living</button>
+            <button class="filter-btn">Sports</button>
+        </div>
+
+        <div class="products-grid">
+            <!-- Electronics Products -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12" alt="Smartphone" class="product-image">
+                <div class="product-content">
+                    <h3>Latest Smartphone</h3>
+                    <p class="product-price">$699.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="Headphones" class="product-image">
+                <div class="product-content">
+                    <h3>Wireless Headphones</h3>
+                    <p class="product-price">$199.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147" alt="Smart Watch" class="product-image">
+                <div class="product-content">
+                    <h3>Smart Watch</h3>
+                    <p class="product-price">$299.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad" alt="Laptop" class="product-image">
+                <div class="product-content">
+                    <h3>Ultra-thin Laptop</h3>
+                    <p class="product-price">$1299.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb" alt="Camera" class="product-image">
+                <div class="product-content">
+                    <h3>Digital Camera</h3>
+                    <p class="product-price">$899.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Fashion Products -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3" alt="Sneakers" class="product-image">
+                <div class="product-content">
+                    <h3>Designer Sneakers</h3>
+                    <p class="product-price">$159.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105" alt="Watch" class="product-image">
+                <div class="product-content">
+                    <h3>Luxury Watch</h3>
+                    <p class="product-price">$499.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5" alt="Backpack" class="product-image">
+                <div class="product-content">
+                    <h3>Designer Backpack</h3>
+                    <p class="product-price">$89.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Shoes" class="product-image">
+                <div class="product-content">
+                    <h3>Running Shoes</h3>
+                    <p class="product-price">$129.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1521360229024-96c129e9376c" alt="Sunglasses" class="product-image">
+                <div class="product-content">
+                    <h3>Designer Sunglasses</h3>
+                    <p class="product-price">$179.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Home & Living Products -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc" alt="Sofa" class="product-image">
+                <div class="product-content">
+                    <h3>Modern Sofa</h3>
+                    <p class="product-price">$899.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1503602642458-232111445657" alt="Table" class="product-image">
+                <div class="product-content">
+                    <h3>Dining Table</h3>
+                    <p class="product-price">$599.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Lamp" class="product-image">
+                <div class="product-content">
+                    <h3>Table Lamp</h3>
+                    <p class="product-price">$79.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126" alt="Chair" class="product-image">
+                <div class="product-content">
+                    <h3>Office Chair</h3>
+                    <p class="product-price">$299.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7" alt="Rug" class="product-image">
+                <div class="product-content">
+                    <h3>Area Rug</h3>
+                    <p class="product-price">$199.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Sports Products -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712" alt="Yoga Mat" class="product-image">
+                <div class="product-content">
+                    <h3>Yoga Mat</h3>
+                    <p class="product-price">$49.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" alt="Dumbbells" class="product-image">
+                <div class="product-content">
+                    <h3>Dumbbells Set</h3>
+                    <p class="product-price">$149.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018" alt="Bicycle" class="product-image">
+                <div class="product-content">
+                    <h3>Mountain Bike</h3>
+                    <p class="product-price">$799.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712" alt="Tennis Racket" class="product-image">
+                <div class="product-content">
+                    <h3>Tennis Racket</h3>
+                    <p class="product-price">$129.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" alt="Basketball" class="product-image">
+                <div class="product-content">
+                    <h3>Basketball</h3>
+                    <p class="product-price">$39.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>ShopEase is your one-stop destination for all your shopping needs. We offer quality products at competitive prices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@shopease.com</p>
+                <p>Phone: (555) 123-4567</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ShopEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Product filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const category = btn.textContent.toLowerCase();
+
+                productCards.forEach(card => {
+                    if (category === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const cardCategory = card.querySelector('h3').textContent.toLowerCase();
+                        card.style.display = cardCategory.includes(category) ? 'block' : 'none';
+                    }
+                });
+            });
+        });
+
+        // Add to cart functionality
+        const addToCartBtns = document.querySelectorAll('.add-to-cart');
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const productName = btn.parentElement.querySelector('h3').textContent;
+                const originalText = btn.textContent;
+                btn.textContent = 'Added to Cart!';
+                btn.style.backgroundColor = '#27ae60';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = '';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html> 
